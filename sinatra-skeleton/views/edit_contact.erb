@@ -47,11 +47,12 @@
 <div class="main-wrapper">
     
     <form action="/contacts/edit" method="POST">
+        
         <input type="hidden" name="id" value=<%= @contact.id %> >
         
-        <input class="input" type="text" name="first_name" value="<%= @contact.first_name %>" placeholder="First Name">
+        <input class="input" type="text" name="first_name" value="<%= @contact.first_name %>" placeholder="First Name" required>
         
-        <input class="input" type="text" name="last_name" value="<%= @contact.last_name %>" placeholder="Last Name">
+        <input class="input" type="text" name="last_name" value="<%= @contact.last_name %>" placeholder="Last Name" required>
         
         <input class="input" type="text" name="phone" value="<%= @contact.phone %>" placeholder="Phone Number">
         
@@ -64,7 +65,6 @@
         <input class="input" type="text" name="state" value="<%= @contact.state %>" placeholder="State">
         
         <input class="input" type="text" name="zip" value="<%= @contact.zip %>" placeholder="Zip Code">
-        
         
     <div class="btn_container">
             

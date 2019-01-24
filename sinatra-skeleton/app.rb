@@ -64,3 +64,11 @@ get "/contacts/delete" do
     
     redirect "/contacts"
 end
+
+get "/contacts/search" do
+    @search = params[:search]
+    search = "%#{params[:search]}"
+    @contacts = Contact.where("first_name LIKE ? OR last_name LIKE ?", search, search)
+    
+    erb :search_contacts
+end

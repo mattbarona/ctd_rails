@@ -89,17 +89,16 @@
     
         <form action="/contacts/search" method="GET">
             
-            <input class="search_bar" name="search" type="text" required>
+            <input class="search_bar" name="search" type="text" value="<%= @search %>">
             
             <input class="search_btn" type="submit" value="Go">
         
         </form>    
-    
     </div>
     
     <div class="btn-container">
         
-        <a href="/contacts/add"><input class="add_btn" type="submit" value="Add a Contact"></a> 
+        <a href="/contacts"><input class="add_btn" type="submit" value="Back to my Contacts"></a> 
     
     </div>
     
