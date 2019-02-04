@@ -34,6 +34,8 @@ class ContactsController < ApplicationController
         @contact.state = params[:state]
         @contact.zip = params[:zip]
         @contact.save
+        
+        redirect_to "/contacts"
     end
 
     def search
