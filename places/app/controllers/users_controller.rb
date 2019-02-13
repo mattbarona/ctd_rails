@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
     
     def index
-        @users = Users.all
+        @users = User.all
     end
     
     def show
+        @user = User.find(params[:id])
+        @places = Place.all
     end
     
     def new
@@ -36,6 +38,15 @@ class UsersController < ApplicationController
     end
 
     def delete
+    end
+    
+    def add_place
+        user = User.find(params[:user_id])
+        user_place = UserPlace.new
+        user_place.user_id = params[:user_id]
+        user_place.place_id = params[:place_id]
+        user_place.save
+        redirect_to user_path(user)
     end
 
 end
