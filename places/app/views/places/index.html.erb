@@ -1,0 +1,19 @@
+<%= link_to 'New', new_place_path %>
+
+<% @places.each do |p|%>
+    
+    <div class="place">    
+    
+        <h2><%= p.name %></h2>
+        
+        <img src="<%= p.picture %>" height="100">
+    
+        <p><%= p.description %></p>
+        
+        <%= link_to 'Edit', edit_place_path(p.id) %>
+        
+        <%= link_to 'Show', place_path(p.id) %>
+        
+    </div>
+
+<% end %>
